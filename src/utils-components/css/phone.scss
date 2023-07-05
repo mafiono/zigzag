@@ -1,0 +1,36 @@
+@import '../../css/variables.scss';
+
+.phone-input-custom{
+    display: flex;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    justify-content: center;
+    &__select{
+        position: absolute;
+        top: 0;
+        left: 15px;
+        background: none;
+        border: none;
+        appearance: none;
+        font-size: 40px;
+        width: 50px;
+        option{
+            font-size: 19px;
+        }
+    }
+    &__input{
+        height: 50px;
+        width: 100%;
+        border: 0;
+        background: 0;
+        font-size: 16px;
+        color: #242229;
+        padding-left: 70px;
+        border: none;
+    }
+    &:hover + .border_back{
+        background: linear-gradient(to right, #06f, #0074ff, #0081ff, #008eff, #09f);
+        box-shadow: 0 4px 7px rgba(0, 102, 255, 0.7);
+    }
+}

@@ -1,0 +1,23 @@
+.not-found{
+    display: inline-block;
+    width: 100%;
+    padding-top: 20px;
+    vertical-align: middle;
+    &-content{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &-text, &-image{
+        text-align: center;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+}
+.aligner{
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Game launcher</title>
+    <link rel="stylesheet" href="https://zigzagsport.com/api/stylesheets/style.css">
+    <script src="https://sport.zigzagsport.com/js/partner/IntegrationLoader.min.js"></script>
+</head>
+
+<body>
+    <div id="sport_div_iframe">
+        <iframe frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write"
+            scrolling="no" width="1" height="600"
+            src="https://sport.zigzagsport.com/SportsBook/Home?token=-&amp;d=d&amp;l=en&amp;tz=&amp;of=0&amp;ofl=&amp;customCssUrl=&amp;sportsBookView=&amp;clearSiteStyles=false&amp;resetAllStyles=false&amp;theme="
+            style="min-width: 100%; min-height: 600px; height: 600px; display: block;"></iframe>
+        </div>
+    <script>var SportLogin = window.parent.openLogin || (() => {
+            console.error('Login function not defined')
+        });
+        var SportRegistration = window.parent.openRegistration || (() => {
+            console.error('Registration function not defined')
+        });
+        var SportDeposit = window.parent.openDeposit || (() => {
+            console.error('Deposit function not defined')
+        });
+    </script>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+            var sp = [
+                ["server", "https://sport.zigzagsport.com/"],
+                ["token", "-"],
+                ["currentPage", "Home"],
+                ["device", "d"],
+                ["language", "en"],
+                ["login", "SportLogin"],
+                ["registration", "SportRegistration"],
+                //["timeZone", "4"],
+                //["eventId", "2381829"],
+                //["champId", "18573"],
+                ["unHideOverflow", true],
+                ["deposit", "SportDeposit"],
+                //["customCssUrl", encodeURIComponent("https://custom.css/URL")], ["oddsFormat", "0"],
+                //["onContentLoaded", "EventHandler"],
+                //["sportsBookView", "europeanView"],
+                ["fixedHeight", true],
+                //["clearSiteStyles", true]
+            ];
+            SportFrame.frame(sp);
+        });
+        </script>
+</body>
+
+</html>

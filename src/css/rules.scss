@@ -1,0 +1,129 @@
+@import "./variables.scss";
+
+.rules {
+  h3{
+      text-align: left;
+      font-size: 16px;
+  }
+  .terms_item::before{
+        counter-increment: item;
+        content: counter(item) ". ";
+        display: inline-block;
+        margin-right: 15px;
+        color: $colorGreen;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    ol{
+        counter-reset: item;
+    }
+  &__nav, &_nav {
+    ol, ul {
+      counter-reset: item;
+      li {
+        margin-bottom: 15px;
+        &:hover {
+          a,
+          &:before {
+            color: $colorGreen;
+          }
+        }
+        &:before {
+          counter-increment: item;
+          content: counter(item) ". ";
+          display: inline-block;
+          margin-right: 5px;
+          font-size: 14px;
+          font-weight: 700;
+        }
+        a {
+          font-size: 14px;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: $black;
+        }
+      }
+    }
+  }
+  &__content, .rules_list {
+    counter-reset: item;
+    h3{
+        display: inline-block;
+    }
+    & > li {
+      margin-bottom: 15px;
+      &:before {
+        counter-increment: item;
+        content: counter(item) ". ";
+        display: inline-block;
+        margin-right: 5px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      ol {
+        counter-reset: item;
+        li:before {
+          content: counters(item,".") ". ";
+          counter-increment: item;
+          font-size: 14px;
+        }
+      }
+    }
+    h4 {
+      display: inline-block;
+      margin-bottom: .5em;
+      font-weight: 700;
+      font-family: "Open Sans", sans-serif;
+    }
+    ul {
+      margin-top: 10px;
+      margin-left: 20px;
+      li {
+        margin-bottom: 10px;
+        list-style-type: disc;
+        &:before {
+          content: '';
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  &__info {
+    display: block;
+    margin: 0 auto 40px;
+    width: 100%;
+  }
+}
+.faq__item {
+  margin-bottom: 25px;
+  h4 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding-left: 35px;
+    min-height: 40px;
+    text-align: left;
+    background: #e0e0e0;
+  }
+  & > div {
+    padding-left: 65px;
+  }
+}
+
+//***************//*//***************//*//***************//*//***************//*//***************//*//***************//*
+//  Responsive   //*//  Responsive   //*//  Responsive   //*//  Responsive   //*//  Responsive   //*//  Responsive   //*
+//***************//*//***************//*//***************//*//***************//*//***************//*//***************//*
+
+
+@media screen and (max-width: 600px) {
+  .faq__item {
+    margin: 0 -30px 25px;
+    h4 {
+      padding-left: 15px;
+    }
+    & > div {
+      padding-left: 15px;
+    }
+  }
+}
+// @media screen and (max-width: 600px) ******************************** @media screen and (max-width: 1621px) ********************************

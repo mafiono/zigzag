@@ -1,0 +1,92 @@
+@import '../../../css/variables.scss';
+
+.social-currencies_box{
+    margin-bottom: 20px;
+}
+div.selected_social-currencies{
+    height: 40px;
+    width: calc(100% - 80px);
+}
+.social-img-block{
+    .social-img-hover{
+        display:  none;
+    }
+    &:hover{
+        .social-img{
+            display: none;
+            &-hover{
+                display: block;
+            }
+        }
+    }
+}
+.social_box {
+  position: absolute;
+  bottom: 70px;
+  left: 50px;
+  z-index: 4;
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .social_icon {
+    //position: relative;
+    display: block;
+    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+    transition: opacity 0.4s ease-in-out;
+    .icon {
+      width: 40px;
+      height: 40px;
+      opacity: 0.5;
+      transition: all 0.6s ease-in-out;
+      //&.ego-ico40_FbHover {
+      //  --color6:#363C43;
+      //  --color5:#FFFFFF;
+      //}
+      //&.ego-ico40_OkHover {
+      //  --color3:#363C43;
+      //  --color5:#FFFFFF;
+      //}
+      //&.ego-ico40_VkHover {
+      //  --color1:#363C43;
+      //  --color5:#FFFFFF;
+      //}
+    }
+    &:focus,
+    &:hover {
+      .icon {
+        opacity: 1;
+        transition: all 0.6s ease-in-out;
+        //&.ego-ico40_FbHover {
+        //  --color6:#06c;
+        //  --color5:#e8ebef;
+        //}
+        //&.ego-ico40_OkHover {
+        //  --color3: #f90;
+        //  --color5: #e8ebef;
+        //}
+        //&.ego-ico40_VkHover {
+        //  --color1:#0080ff;
+        //  --color5:#e8ebef;
+        //}
+      }
+    }
+  }
+}
+.social_box_fixed {
+  display: none;
+}
+
+
+//***************//
+//  Responsive   //************************************************************************************
+//***************//
+@media screen and (max-width: 1080px) {
+  .social_box {
+    left: 35px;
+  }
+}
+// @media screen and (max-width: 1080px) **************************************************************

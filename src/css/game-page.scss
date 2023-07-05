@@ -1,0 +1,352 @@
+.play_game {
+    color: $black;
+
+    &__screen {
+        min-height: 105vh;
+    }
+
+    &__nav {
+        position: relative;
+        margin: 15px auto 10px;
+        max-width: calc(100vw - 110px);
+        width: 100%;
+        height: 50px;
+        background: #26253e;
+        &:before, &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-top: none;
+            border-bottom: 50px solid transparent;
+        }
+        &:before {
+            left: 0;
+            transform: translateX(-100%);
+            border-left: none;
+            border-right: 20px solid #26253e;
+        }
+        &:after {
+            right: 0;
+            transform: translateX(100%);
+            border-left: 20px solid #26253e;
+            border-right: none;
+        }
+    }
+
+    &__nav_list {
+        display: flex;
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 0 10px;
+        & > li {
+            &:first-child {
+                flex: 1 1 100%;
+            }
+            & + li {
+                margin-left: 15px;
+            }
+        }
+    }
+    .operation_btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4px;
+        width: 45px;
+        height: 40px;
+        z-index: 1;
+        transform: translateY(0);
+        transition: transform 0.2s ease-in-out;
+        &:after {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $colorDark;
+            z-index: -1;
+            transform: skewX(20deg);
+            box-shadow: 1px 6px 0 0 #1d1c2f;
+            transition: all 0.2s ease-in-out;
+        }
+        img {
+            display: block;
+            width: 16px;
+            height: 16px;
+            filter: invert(0.6);
+        }
+
+        &.active,
+        &:hover {
+            transform: translateY(4px);
+            transition: transform 0.2s ease-in-out;
+            &:after {
+                background: $colorGreen;
+                box-shadow: 1px 2px 0 0 #8c8b93;
+            }
+            img {
+                filter: invert(0);
+            }
+        }
+    }
+    .switch {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-right: 10px;
+        height: 50px;
+        &__btn {
+            position: relative;
+            display: block;
+            width: 30px;
+            height: 14px;
+            background: #0e0e17;
+            border-radius: 7px;
+            transition: all 0.2s ease-in-out;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translate(-50%, -25%);
+                display: block;
+                width: 30px;
+                height: 30px;
+                background: $colorGray;
+                border-radius: 50%;
+                transition: all 0.2s ease-in-out;
+            }
+            &:before {
+                content: attr(data-money);
+                position: absolute;
+                top: 0;
+                right: 100%;
+                transform: translate(-10px,-3px);
+                display: block;
+                margin-right: 15px;
+                font-size: 14px;
+                color: $colorGreen;
+                text-transform: uppercase;
+                white-space: nowrap;
+                transition: all 0.2s ease-in-out;
+            }
+        }
+        input[type="checkbox"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-appearance: none;
+            opacity: 0;
+            &:checked + .switch__btn {
+                background: #8c8b93;
+                &:after {
+                    background: $colorGreen;
+                    transform: translate(35%, -25%);
+                }
+                &:before {
+                    content: attr(data-demo);
+                    color: $colorGray;
+                    transform: translate(0,-3px);
+                }
+            }
+        }
+    }
+
+    &__box {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+    }
+
+    &__item_box {
+        margin: 0 auto;
+        max-width: 1170px;
+        width: 100%;
+        max-height: 800px;
+        height: calc(100vh - 225px);
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .main__bg {
+        margin-bottom: 50px;
+        h4 {
+            margin-bottom: .4em;
+            text-align: left;
+        }
+    }
+}
+.fast_deposit_form {
+    display: none;
+    visibility: hidden;
+    &.active {
+        display: block;
+        visibility: visible;
+    }
+    &__list {
+        display: flex;
+        margin-top: 4px;
+        li + li {
+            margin-left: 15px;
+        }
+        label {
+            position: relative;
+        }
+    }
+    input[type="radio"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-appearance: none;
+        opacity: 0;
+        visibility: hidden;
+        &:checked + .btn.btn_black {
+            color: $black;
+            transform: translateY(4px);
+            &:after {
+                background: $colorGreen;
+                box-shadow: 2px 2px 0 0 rgba(140, 139, 147, 1);
+            }
+        }
+    }
+    &__submit {
+        display: inline-flex;
+        align-items: center;
+        height: 40px;
+        color: $colorGray;
+        font-size: 14px;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover {
+            color: $colorGreen;
+        }
+    }
+    input[type="submit"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-appearance: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.fullscreen_mode {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    header {
+        transform: translateY(-100%);
+    }
+
+    footer {
+        transform: translateY(100%);
+    }
+
+    .play_game {
+        &__box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            max-width: unset;
+            max-height: unset;
+            height: 100%;
+            z-index: 9;
+        }
+
+        &__item_box {
+            max-width: unset;
+            max-height: unset;
+            height: 100%;
+        }
+
+        &__nav {
+            margin: 0 auto;
+        }
+
+        &__nav_list {
+            display: flex;
+        }
+
+        &__nav_item {
+            margin-bottom: 0;
+            margin-left: 5px;
+            padding: 0 5px;
+            width: 55px;
+            height: 40px;
+
+            &.money_btn {
+                width: auto;
+            }
+        }
+    }
+}
+
+
+//***************//*//***************//*//***************//*//***************//*//***************//*//***************//*
+//  Responsive   //*//  Responsive   //*//  Responsive   //*//  Responsive   //*//  Responsive   //*//  Responsive   //*
+//***************//*//***************//*//***************//*//***************//*//***************//*//***************//*
+@media screen and (max-width: 1270px) {
+    .play_game {
+        &__nav {
+            margin-top: 0;
+            max-width: 100vw;
+            &:before, &:after {
+                content: none;
+                display: none;
+            }
+        }
+    }
+}
+// @media screen and (max-width: 1270px) ********************************
+
+
+@media screen and (max-width: 1030px) {
+    .fast_deposit_form__list li:nth-child(5) {
+        display: none;
+        visibility: hidden;
+    }
+}
+// @media screen and (max-width: 1030px) ********************************
+
+
+@media screen and (max-width: 900px) {
+    .fast_deposit_form__list li:nth-child(4) {
+        display: none;
+        visibility: hidden;
+    }
+}
+// @media screen and (max-width: 900px) ********************************
+
+
+@media screen and (max-width: 770px) {
+    .fast_deposit_form__list li:nth-child(3) {
+        display: none;
+        visibility: hidden;
+    }
+}
+// @media screen and (max-width: 770px) ********************************
+
+
+@media screen and (max-width: 670px) {
+    .fast_deposit_form.active {
+        display: none;
+        visibility: hidden;
+    }
+    .play_game__nav_list>li:nth-child(2) {
+        display: none;
+        visibility: hidden;
+    }
+}
+// @media screen and (max-width: 670px) ********************************

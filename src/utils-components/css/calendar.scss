@@ -1,0 +1,150 @@
+@import '../../css/variables.scss';
+
+.calendar_box {
+  display: block;
+  max-width: 320px;
+  font-size: 16px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.react-datepicker-header-month{
+    user-select: none;
+}
+.react-datepicker__portal {
+    .react-datepicker__header.react-datepicker__header--custom{
+        border-radius: 10px;
+    }
+    .calendar_box{
+        max-width: none;
+    }
+}
+.calendar_heading {
+  display: block;
+  padding: 15px 30px;
+  color: #ffffff;
+}
+.select_item {
+  position: relative;
+  text-align: center;
+}
+.select_item label {
+  display: flex;
+  align-items: center;
+}
+.select_item .start_year {
+  justify-content: center;
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+.border_select_option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  padding: 5px 10px 5px 5px;
+  border: 2px solid #ccc;
+}
+.border_select_option:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 6px 0 6px;
+  border-color: #007bff transparent transparent transparent;
+  transform: translate(5px, 1px);
+}
+.select_item .start_year:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 8px 0 8px;
+  border-color: #ffffff transparent transparent transparent;
+  transform: translateY(3px);
+  margin-left: 5px;
+}
+.react-datepicker__header--custom .select_item select {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 6em;
+  font-size: 18px;
+  height: auto;
+  &.mobile-header{
+      position: unset;
+      margin: 0 auto;
+      display: block;
+      transform: none;
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appereance: none;
+      text-align: center;
+      background:transparent;
+      border: none;
+      color:#fff;
+      font-size: 18px;
+  }
+}
+.select_date {
+  display: block;
+  text-align: center;
+}
+.time_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px 30px;
+  user-select: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.time_box .select_item {
+  margin-right: 5px;
+}
+.current_time_btn {
+  color: #007bff;
+  cursor: pointer;
+}
+select.hidden-select{
+    display: none;
+}
+.calendar-toggle-input{
+    display: none !important;
+    &:checked + select{
+        display: block;
+    }
+}
+.react-datepicker{
+    border-radius: 13px 13px 0 0;
+}
+.time-select-calendar{
+    padding-bottom: 60px;
+}
+.react-datepicker__header{
+    padding: 0;
+    &.react-datepicker__header--custom{
+        position: initial;
+    }
+}
+.label-toggle{
+    user-select: none;
+}
+.month-container{
+    background: #fff;
+    &>span{
+        width: calc(100% - 71px);
+        display: inline-block;
+    }
+}
+
+.react-datepicker__input-time-container,
+.react-datepicker__time-container {
+    display: none;
+}
