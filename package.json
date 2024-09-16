@@ -67,7 +67,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/react-router": "^5.1.20",
     "sass": "^1.63.6",
-    "sass-loader": "^13.3.2",
+    "sass-loader": "^16.0.0",
     "typescript": "^5.1.6",
     "webpack": "^5.88.0"
   }
